@@ -1,0 +1,45 @@
+version: "3"
+
+services:
+  # api:
+  #   image: node:18
+  #   container_name: api
+  #   working_dir: /app
+  #   volumes:
+  #     - ./backend:/app
+  #   environment:
+  #     NODE_ENV: production
+  #     PORT: 8080
+  #     REDIS_HOST: redis
+  #     REDIS_PORT: 6379
+  #     DB_HOST: db
+  #     DB_USER: root
+  #     DB_PASSWORD: example_password
+  #     DB_DATABASE: example_database
+  #     JWT_SECRET: example_secret
+  #   ports:
+  #     - "8080:8080"
+  #   command: npm start
+
+  db:
+    image: mysql:8
+    container_name: db
+    environment:
+      MYSQL_ROOT_PASSWORD: example_password
+      MYSQL_DATABASE: example_database
+    volumes:
+      - db-data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  redis:
+    image: redis:latest
+    container_name: redis
+    volumes:
+      - redis-data:/data
+    ports:
+      - "6379:6379"
+
+volumes:
+  db-data:
+  redis-data:

@@ -1,0 +1,8 @@
+{
+    "columns": [
+        { "name" :"id", "selector": "id"},
+        { "name" :"name", "selector": "name", "sortable": "true"},
+        { "name" :"date", "selector": "date"},
+        { "name" :"value", "selector": "value", "sortable": "true"}
+    ]
+}
